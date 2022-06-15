@@ -1,0 +1,242 @@
+*{
+    margin:0;
+    padding: 0;
+}
+body{
+    font-family: sans-serif ;
+    color:white ;
+    background: linear-gradient(-45deg, blue,  rgb(188, 188, 228));
+    /* display: grid; */
+    /* grid-template-columns: repeat(1, 1fr); */
+    /* grid-template-rows: 160px 1fr; */
+}
+#header-logo{
+transform: rotateY(180deg) ;
+width:140px;
+height: 80px;
+position: relative;
+top: 10px;
+filter: drop-shadow(0px 0px 2px white);
+animation: ship_animation 1.5s ease-out infinite ;
+}
+@keyframes ship_animation {
+    0%{
+        transform: scale(1) rotateZ(0) rotateY(180deg);
+    }
+    50%{
+        transform: scale(1.05) rotateZ(-5deg) rotateY(180deg);
+        top: 5px;
+    }
+    100%{
+        transform: scale(1) rotateZ(0) rotateY(180deg);
+    }
+}
+#header-title{
+    font-size: 40px;
+    /* float: left; */
+    position: fixed;
+    top:20px;
+    left: 20%;
+    filter: drop-shadow(0px 0px 2px white);
+}
+
+#gameContainer{
+    width:80vw;
+    height:60vh;
+    box-shadow: 0px 0px 3px white;
+    border-radius: 3px;
+    position: relative;
+    left: 50%;
+    top:30%;
+    transform: translate(-50%);
+    display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        gap: 10px;
+padding: 10px ;
+background: rgba(255, 255, 255, 0.1);
+}
+#gameContainer div{
+    padding: 10px;
+    box-shadow: 0px 0px 3px white;
+    border: 1px solid white;
+}
+
+#game-div{
+    box-shadow: 0px 0px 3px white;
+    display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        gap: 10px;
+} 
+#game-div div{
+    padding: 4px;
+    box-shadow: 0px 0px 2px white;
+    cursor: pointer;
+    border-radius: 15px;
+} 
+#game-div div:hover {
+transform: scale(1.05);
+background: rgba(255, 255, 255, 0.1);
+}
+/* ///// */
+#commands{
+    display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        gap: 10px;
+}
+
+#commands div{
+box-shadow: 0px 0px 0px transparent;
+border: none;
+}
+#fire-button{
+    border: 1px solid white;
+    border-radius: 5px;
+    background: transparent;
+    color: white;
+    padding: 10px 20px ;
+    cursor: pointer;
+    box-shadow: 0px 0px 2px white;
+    font-size: 25px;
+}
+#fire-button:hover{
+    transform: scale(1.05);
+    box-shadow: 0px 0px 4px white;
+    background: red;
+}
+#commands-els {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 10px;
+}
+#commands-info{
+            position: relative;
+            left: 50%;
+            transform: translate(-50%);
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(1, 1fr);
+            gap: 10px;
+}
+#restart-button{
+    border: 1px solid white;
+    border-radius: 5px;
+    background: transparent;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    box-shadow: 0px 0px 2px white;
+    font-size: 25px;
+}
+#restart-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 4px white;
+    background: rgba(0, 0, 255, 1);
+}
+#button-div{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    gap: 10px;
+}
+#level{
+    margin-left: 15px;
+    border-radius: 3px;
+    border: 1px solid white;
+    background: rgb(124, 124, 255);
+    color: white;
+    padding: 2px 5px;
+
+}
+#level option{
+        background: rgb(124, 124, 255);
+        color: white;
+}
+#select-check{
+background: transparent;
+color: white;
+border: 1px solid white;
+border-radius: 50%;
+padding: 2px 5px;
+margin-left: 5px;
+cursor: pointer;
+}
+#select-check:hover{
+    transform: scale(1.05);
+    filter: drop-shadow(0px 0px 2px white);
+}
+
+#weapon-img{
+    float: left;
+    width:60px;
+    height: 60px;
+    margin-left: 60px;
+    filter: drop-shadow(0px 0px px white);
+    background: radial-gradient(white , rgba(255, 255, 255, 0.05),rgba(255, 255, 255, 0)) ;
+    border-radius: 50%;
+
+}
+#weapon-name{
+    margin-top:5px ;
+    /* padding-left: 15px; */
+}
+/* //////// */
+#instructions{
+    margin-left: 0px  ;
+    font-size: 15px;
+    line-height: 30px;
+
+}
+/* /// */
+#creators-div{
+transform: rotateZ(90deg);
+position: fixed;
+top:38px;
+left:-140px;
+width:fit-content;
+height: fit-content;
+}
+#creators-h3 {
+    padding: 5px 0px 5px 15px ;
+    position: relative;
+    box-shadow: 0px 0px 2px white;
+    border: 1px solid white;
+    border-top-right-radius: 20px;
+    border-bottom: none;
+    cursor: pointer;
+}
+#creators-container{
+    box-shadow: 0px 0px 2px white;
+        border: 1px solid white;
+        border-top: none;
+        width: fit-content;
+        height: fit-content;
+}
+#creators-h3:hover{
+    position: relative;
+    box-shadow: 0px 0px 2px white;
+    filter: drop-shadow(0px 0px 2px white);
+
+}
+#creators-div p{
+    padding:10px 10px 10px 10px ;
+}
+
+#creators-div img{
+    position: relative;
+    width:70px;
+    height: 40px;
+    transform: rotateZ(-90deg);
+    padding: 10px 10px 10px 10px;
+    cursor: pointer;
+}
+#creators-div img:hover{
+    transform: rotateZ(-90deg) scale(1.05);
+    filter: drop-shadow(0px 0px 2px white);
+}
