@@ -59,14 +59,22 @@ select_check.addEventListener("click",()=>{
     if(gameOver == true){
         alert('Game Over! Restart')
     }else{
-        if(level == 'Easy'){
+        if(level == '1'){
         shots_count = 6;
-        }else if(level == 'Intermediate'){
+        length = level*4
+        }else if(level == '2'){
         shots_count = 4;
-        }else if(level == 'Hard'){
+        length = level*4
+        }else if(level == '3'){
         shots_count = 2;
+        length = level*4
         }
         shotsCount.innerText = shots_count;
+        if(hint_number == NaN ){
+            hint_number = 36;
+        }
+            values = equation_generator(hint_number, level, length)
+            index_of_block.innerHTML = values[0]
     }
     
 })
@@ -87,34 +95,35 @@ window.addEventListener("load", ()=>{
     shotsCount.innerHTML = shots_count;
 
 for(g=0; g<1; g++){
+    // WebGLProgram.addEventListener("click",()=>{
+
+
     let x = Math.round((Math.random()*36));
 
     array_of_ships.push(array_of_blocks[x])
 
     hint_number = array_of_blocks.indexOf(array_of_blocks[x+1]);
-
+    level = document.getElementById("level").value;
     number_of_row =Math.ceil(hint_number/6);
     hint_row.innerHTML = number_of_row ;
+    length = level*4
 
-    temp1 = Math.round(Math.sqrt(hint_number))
-    temp2 = hint_number**2-temp1;
-    temp3 = Math.round(Math.random()*10+1)**2
 
-    isNaN(temp1)
-    isNaN(temp2)
-    if(isNaN(temp1) || isNaN(temp2)){
-        index_of_block.innerHTML = 36
-        hint_row.innerHTML = 6
-    }else{
-        index_of_block.innerHTML = '&#8730 [('+temp1*temp3+'+'+temp2*temp3+') &#247 '+temp3+']';
+    if(hint_number == NaN ){
+        hint_number = 36;
     }
+        values = equation_generator(hint_number, level, length)
+        index_of_block.innerHTML = values[0]
     
+    
+
     if(hint_number%2==0){
         
         hint_column.innerHTML = 'Even'
     } else{
         hint_column.innerHTML = 'Odd'
     }
+        // })
 }
 
 
